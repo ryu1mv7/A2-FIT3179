@@ -1,0 +1,52 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Migration Program category composition (Primary applicants) — normalized stacked bar. Minimal, robust.",
+  "data": { "url": "data/visa_outcomes_2014_2024.csv" },
+
+  "transform": [
+    { "filter": "datum.VisaProgram == 'Migration'" },
+    { "filter": "datum.ApplicantType == 'Primary'" }
+  ],
+
+  "width": 960,
+  "height": 360,
+  "title": { "text": "Migration Program – Category Composition (Primary Applicants)", "anchor": "start" },
+
+  "mark": "bar",
+
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "title": "Program Year",
+      "axis": { "labelAngle": -45, "labelOverlap": false }
+    },
+    "y": {
+      "aggregate": "sum",
+      "field": "Outcome",
+      "stack": "normalize",
+      "axis": { "format": ".0%", "title": "Share of Categories (%)" }
+    },
+    "color": {
+      "field": "VisaCategory",
+      "type": "nominal",
+      "title": "Visa Category",
+      "scale": { "range": [ "#2563eb", "#ef4444", "#fbbf24" ] }
+    },
+    "opacity": {
+      "condition": { "param": "catSel", "value": 1 },
+      "value": 0.3
+    },
+    "tooltip": [
+      { "field": "Year", "type": "ordinal" },
+      { "field": "VisaCategory", "title": "Category" },
+      { "aggregate": "sum", "field": "Outcome", "title": "Outcomes", "format": ",d" }
+    ]
+  },
+
+  "params": [
+    { "name": "catSel", "select": { "type": "point", "fields": ["VisaCategory"] }, "bind": "legend" }
+  ],
+
+  "config": { "view": { "stroke": null } }
+}

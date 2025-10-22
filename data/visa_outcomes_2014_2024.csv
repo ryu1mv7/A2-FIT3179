@@ -1,0 +1,81 @@
+Year,VisaProgram,ApplicantType,VisaCategory,Outcome
+2014-15,Migration,Primary,Family,51834
+2015-16,Migration,Primary,Family,48384
+2016-17,Migration,Primary,Family,48004
+2017-18,Migration,Primary,Family,39435
+2018-19,Migration,Primary,Family,39596
+2019-20,Migration,Primary,Family,35784
+2020-21,Migration,Primary,Family,69460
+2021-22,Migration,Primary,Family,45306
+2022-23,Migration,Primary,Family,44323
+2023-24,Migration,Primary,Family,42297
+2014-15,Migration,Primary,Skilled,59482
+2015-16,Migration,Primary,Skilled,60735
+2016-17,Migration,Primary,Skilled,56817
+2017-18,Migration,Primary,Skilled,50046
+2018-19,Migration,Primary,Skilled,50675
+2019-20,Migration,Primary,Skilled,43944
+2020-21,Migration,Primary,Skilled,36082
+2021-22,Migration,Primary,Skilled,41022
+2022-23,Migration,Primary,Skilled,68922
+2023-24,Migration,Primary,Skilled,66200
+2014-15,Migration,Primary,Special Eligibility,152
+2015-16,Migration,Primary,Special Eligibility,177
+2016-17,Migration,Primary,Special Eligibility,238
+2017-18,Migration,Primary,Special Eligibility,136
+2018-19,Migration,Primary,Special Eligibility,63
+2019-20,Migration,Primary,Special Eligibility,52
+2020-21,Migration,Primary,Special Eligibility,25
+2021-22,Migration,Primary,Special Eligibility,92
+2022-23,Migration,Primary,Special Eligibility,65
+2023-24,Migration,Primary,Special Eligibility,93
+2014-15,Migration,Secondary,Family,9251
+2015-16,Migration,Secondary,Family,9016
+2016-17,Migration,Secondary,Family,8216
+2017-18,Migration,Secondary,Family,8297
+2018-19,Migration,Secondary,Family,7651
+2019-20,Migration,Secondary,Family,6177
+2020-21,Migration,Secondary,Family,7912
+2021-22,Migration,Secondary,Family,5982
+2022-23,Migration,Secondary,Family,8177
+2023-24,Migration,Secondary,Family,10423
+2014-15,Migration,Secondary,Skilled,68292
+2015-16,Migration,Secondary,Skilled,67815
+2016-17,Migration,Secondary,Skilled,66750
+2017-18,Migration,Secondary,Skilled,61053
+2018-19,Migration,Secondary,Skilled,59038
+2019-20,Migration,Secondary,Skilled,51899
+2020-21,Migration,Secondary,Skilled,43538
+2021-22,Migration,Secondary,Skilled,48041
+2022-23,Migration,Secondary,Skilled,73422
+2023-24,Migration,Secondary,Skilled,70900
+2014-15,Migration,Secondary,Special Eligibility,86
+2015-16,Migration,Secondary,Special Eligibility,131
+2016-17,Migration,Secondary,Special Eligibility,183
+2017-18,Migration,Secondary,Special Eligibility,100
+2018-19,Migration,Secondary,Special Eligibility,52
+2019-20,Migration,Secondary,Special Eligibility,29
+2020-21,Migration,Secondary,Special Eligibility,29
+2021-22,Migration,Secondary,Special Eligibility,107
+2022-23,Migration,Secondary,Special Eligibility,95
+2023-24,Migration,Secondary,Special Eligibility,87
+2014-15,Child,Primary,Child,3501
+2015-16,Child,Primary,Child,3390
+2016-17,Child,Primary,Child,3338
+2017-18,Child,Primary,Child,3243
+2018-19,Child,Primary,Child,2478
+2019-20,Child,Primary,Child,2996
+2020-21,Child,Primary,Child,2999
+2021-22,Child,Primary,Child,2999
+2022-23,Child,Primary,Child,0
+2023-24,Child,Primary,Child,0
+2014-15,Child,Secondary,Child,11
+2015-16,Child,Secondary,Child,10
+2016-17,Child,Secondary,Child,12
+2017-18,Child,Secondary,Child,5
+2018-19,Child,Secondary,Child,0
+2019-20,Child,Secondary,Child,10
+2020-21,Child,Secondary,Child,7
+2021-22,Child,Secondary,Child,7
+2022-23,Child,Secondary,Child,0
+2023-24,Child,Secondary,Child,0

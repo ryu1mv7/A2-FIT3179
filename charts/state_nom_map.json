@@ -1,0 +1,28 @@
+{
+  "$schema":"https://vega.github.io/schema/vega-lite/v5.json",
+  "data":{"url":"data/state_nom_2023_24.csv","format":{"type":"csv","parse":{"NOM":"number"}}},
+  "vconcat":[
+    {
+      "title":"NOM by State/Territory (2023–24)",
+      "width":760,"height":340,
+      "mark":{"type":"bar","cornerRadiusEnd":3},
+      "encoding":{
+        "y":{"field":"State","type":"ordinal","sort":"-x"},
+        "x":{"field":"NOM","type":"quantitative","axis":{"format":",d"}},
+        "color":{"value":"#2563eb"},
+        "tooltip":[{"field":"State"},{"field":"NOM","format":",d"}]
+      }
+    },
+    {
+      "title":"Share of Total NOM",
+      "width":760,"height":260,
+      "mark":{"type":"arc","innerRadius":90,"outerRadius":140},
+      "encoding":{
+        "theta":{"field":"NOM","type":"quantitative"},
+        "color":{"field":"State","type":"nominal","legend":{"columns":2}},
+        "tooltip":[{"field":"State"},{"field":"NOM","format":",d"}]
+      }
+    }
+  ],
+  "config":{"view":{"stroke":null}}
+}

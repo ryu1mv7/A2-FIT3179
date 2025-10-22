@@ -1,0 +1,79 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": { "url": "data/visa_outcomes_2014_2024.csv" },
+  "width": 960,
+  "height": 340,
+  "title": {
+    "text": "Total Visa Outcomes by Program (2014–2024)",
+    "subtitle": "Pandemic slowdown → catch-up rebound → stabilisation",
+    "anchor": "start"
+  },
+
+  "layer": [
+    {
+      "data": { "values": [ { "x1": "2019-20", "x2": "2021-22" } ] },
+      "mark": { "type": "rect", "opacity": 0.08, "color": "#cbd5e1" },
+      "encoding": { "x": { "field": "x1", "type": "ordinal" }, "x2": { "field": "x2" } }
+    },
+
+    {
+      "mark": { "type": "line", "point": true, "strokeWidth": 3 },
+      "encoding": {
+        "x": { "field": "Year", "type": "ordinal", "title": "Year",
+          "axis": { "labelAngle": -45, "labelOverlap": false, "titlePadding": 12 } },
+        "y": { "aggregate": "sum", "field": "Outcome", "title": "Total Outcomes",
+          "axis": { "format": ",d", "titlePadding": 6 } },
+        "color": {
+          "field": "VisaProgram", "type": "nominal", "title": "Visa Program",
+          "scale": { "domain": ["Child","Migration"], "range": ["#2563eb","#ef4444"] }
+        },
+        "tooltip": [
+          { "field": "Year", "type": "ordinal" },
+          { "field": "VisaProgram", "title": "Program" },
+          { "aggregate": "sum", "field": "Outcome", "title": "Total Outcomes", "format": ",d" }
+        ]
+      }
+    },
+
+    { "data": { "values": [ { "Year": "2022-23" } ] },
+      "mark": { "type": "rule", "strokeDash": [4,4], "color": "#9ca3af" },
+      "encoding": { "x": { "field": "Year", "type": "ordinal" } }
+    },
+
+    {
+      "data": {
+        "values": [
+          { "Year": "2019-20", "labelY": 196000, "note": "Border controls &\nprocessing slowdown", "dx": 8 },
+          { "Year": "2021-22", "labelY": 142000, "note": "Lowest point during\nrestrictions", "dx": 8 },
+          { "Year": "2022-23", "labelY": 198500, "note": "Catch-up processing\ndrives surge", "dx": -110 },
+          { "Year": "2023-24", "labelY": 186000, "note": "Stabilisation\nafter rebound", "dx": -20 }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "align": "left",
+        "lineBreak": "\n",
+        "limit": 160,
+        "background": "#ffffffcc",
+        "padding": 3,
+        "radius": 3
+      },
+      "encoding": {
+        "x": { "field": "Year", "type": "ordinal" },
+        "y": { "field": "labelY", "type": "quantitative" },
+        "text": { "field": "note" },
+        "dx": { "field": "dx", "type": "quantitative" },
+        "color": { "value": "#374151" }
+      }
+    },
+
+    {
+      "data": { "values": [ { "Year": "2022-23", "text": "2022–23 rebound" } ] },
+      "mark": { "type": "text", "align": "left", "dx": 6, "dy": -6, "fontSize": 12, "color": "#6b7280" },
+      "encoding": { "x": { "field": "Year", "type": "ordinal" }, "y": { "datum": 0 }, "text": { "field": "text" } }
+    }
+  ],
+
+  "config": { "axis": { "labelColor": "#333", "titleColor": "#333" }, "view": { "stroke": null } }
+}

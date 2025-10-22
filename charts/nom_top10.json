@@ -1,0 +1,30 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 950,
+  "height": 420,
+  "title": { "text": "Top 10 Countries by Net Overseas Migration (Latest Year)", "anchor": "start" },
+  "data": {
+    "url": "data/table_1_1_nom_latest_formal_v2.csv",
+    "format": { "type": "csv", "parse": { "NOM": "number" } }
+  },
+  "transform": [
+    { "filter": "isValid(datum.NOM)" },
+    { "filter": "datum.NOM > 0" },
+    {
+      "window": [{ "op": "rank", "as": "rank" }],
+      "sort": [{ "field": "NOM", "order": "descending" }]
+    },
+    { "filter": "datum.rank <= 10" }
+  ],
+  "mark": { "type": "bar", "cornerRadiusEnd": 3 },
+  "encoding": {
+    "y": { "field": "Country", "type": "ordinal", "sort": "-x", "title": "Country" },
+    "x": { "field": "NOM", "type": "quantitative", "title": "NOM (people)", "axis": { "format": ",d" } },
+    "tooltip": [
+      { "field": "Country", "title": "Country" },
+      { "field": "NOM", "title": "NOM", "format": ",d" }
+    ],
+    "color": { "value": "#3b82f6" }
+  },
+  "config": { "view": { "stroke": null } }
+}
